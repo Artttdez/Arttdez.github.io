@@ -38,6 +38,115 @@ body{
   }
 }
 
+.players{
+  display: flex;
+  &__card{
+    padding-top: 125%;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    &_type1{
+      background-color: #FFE53B;
+      background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    }
+    &_type2{
+      background-color: #FF3CAC;
+      background-image: linear-gradient(147deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    }
+    &_type3{
+      background-color: #F4D03F;
+      background-image: linear-gradient(147deg, #F4D03F 0%, #16A085 100%);
+    }
+    &_type4{
+      background-color: #74EBD5;
+      background-image: linear-gradient(147deg, #74EBD5 0%, #9FACE6 100%);
+    }
+    &_type5{
+      background-color: #08AEEA;
+      background-image: linear-gradient(147deg, #08AEEA 0%, #2AF598 100%);
+    }
+    &_type6{
+      background-color: #ffffff;
+      background-image: linear-gradient(147deg, #ffffff 0%, #ffedbd 100%);
+      color: #4e4949;
+    }
+    &_type7{
+      background-color: #ac7657;
+      background-image: linear-gradient(147deg, #AC7657 0%, #FBAB7E 100%);
+    }
+    &_type8{
+      background-color: #89216B;
+      background-image: linear-gradient(147deg, #DA4453 0%, #89216B 100%);
+    }
+  }
+  &__icon{
+    text-align: center;
+    font-size: 72px;
+    padding: 12px;
+  }
+  &__content{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    width: 132px;
+    margin-left: auto;
+    margin-right: auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  &__score{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__score-coin{
+    margin-right: 6px;
+    height: 14px;
+    width: 14px;
+    border-radius: 100px;
+    border: 2px solid #fdda31;
+    background: #f6b331;
+    @keyframes players__score-coin_spin {
+      0%    { transform: rotateY(0deg); }
+      50%  { transform: rotateY(180deg); }
+      100%    { transform: rotateY(0deg); }
+    }
+    animation: players__score-coin_spin 6s ease infinite;
+  }
+  &__score-number{
+    font-weight: 600;
+  }
+  &_leader{
+    background: #f6b331;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: -5px;
+    right: 10px;
+  }
+  &_host{
+    background: #de31fd;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    animation: spin 6s ease infinite;
+  }
+}
+
 .header{
   background: #222222;
   border-bottom: #555555 solid 1px;
