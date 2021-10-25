@@ -21,3 +21,18 @@ if (document.querySelector('.swiper') !== null) {
     }
   });
 }
+
+const VolumeUp = document.getElementById('iconVolumeUp');
+const VolumeMute = document.getElementById('iconVolumeMute');
+
+if ((VolumeUp !== null) || (VolumeMute !== null)) {
+  VolumeUp.addEventListener('click', () => {
+    VolumeUp.style.display = 'none';
+    VolumeMute.style.display = 'inline';
+  })
+
+  VolumeMute.addEventListener('click', () => {
+    VolumeMute.style.display = 'none';
+    VolumeUp.style.display = 'inline';
+  })
+}
