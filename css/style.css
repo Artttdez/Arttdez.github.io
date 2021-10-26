@@ -308,4 +308,103 @@ body {
   background: #284775;
 }
 
+.about-project__text {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 630px) {
+  .about-project__text {
+    flex-direction: column;
+  }
+}
+.about-project__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px 20px 20px 0;
+  margin-right: 60px;
+}
+.about-project__icon-cogs {
+  position: relative;
+}
+.about-project__icon-cogs > .fa:nth-child(1) {
+  animation-duration: 4s;
+}
+.about-project__icon-cogs > .fa:nth-child(2),
+.about-project__icon-cogs > .fa:nth-child(3) {
+  position: absolute;
+  top: -0.4em;
+  right: -0.45em;
+  animation-direction: reverse;
+  animation-duration: 2s;
+}
+.about-project__icon-cogs > .fa:nth-child(3) {
+  top: auto;
+  bottom: -0.4em;
+}
+@media (max-width: 630px) {
+  .about-project__icon {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+.about-project__developers {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 630px) {
+  .about-project__developers {
+    flex-direction: column;
+  }
+}
+.about-project__developer {
+  padding: 12px;
+  margin-right: 30px;
+  background: #333333;
+  border-radius: 10px;
+  max-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.about-project__developer:last-child {
+  margin-right: 0;
+}
+@media (max-width: 630px) {
+  .about-project__developer {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+  }
+  .about-project__developer:last-child {
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+}
+.about-project__developer-image {
+  width: calc(100% + 24px);
+  padding-bottom: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+  position: relative;
+  top: -12px;
+  left: -12px;
+}
+.about-project__developer-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.about-project__developer-link {
+  margin-left: 5px;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+}
+.about-project__developer-link:first-child {
+  margin-right: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
