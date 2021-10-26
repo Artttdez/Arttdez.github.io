@@ -34,11 +34,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635151563175</updated>
-      <workItem from="1635151564248" duration="531000" />
+      <workItem from="1635151564248" duration="750000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="375" y="246" key="EditFileWatcherDialog" timestamp="1635165928550">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="375" y="246" key="EditFileWatcherDialog/0.0.1440.900@0.0.1440.900" timestamp="1635165928550" />
   </component>
 </project>
