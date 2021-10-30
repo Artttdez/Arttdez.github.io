@@ -389,6 +389,185 @@ body{
   }
 }
 
+.lobby{
+  padding: 100px 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  position: relative;
+  grid-template-columns: 250px 1fr auto;
+  box-sizing: border-box;
+  @media (max-width: 900px){
+    grid-template-columns: 1fr auto;
+    max-width: 600px;
+  }
+  @media (max-width: 630px){
+    grid-template-columns: 1fr;
+  }
+  grid-column-gap: 60px;
+  grid-row-gap: 60px;
+  flex-grow: 2;
+  &__rooms{
+    width: 100%;
+    padding: 12px;
+    position: sticky;
+    top: 105px;
+    border-radius: 10px;
+    background: #333333;
+    box-sizing: border-box;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 900px){
+      grid-area: 1/1/2/3;
+      position: static;
+    }
+    @media (max-width: 630px){
+      grid-area: auto;
+    }
+    &-title{
+      font-weight: 600;
+      font-size: 22px;
+      text-align: center;
+      padding: 24px;
+      width: calc(100% + 24px);
+      position: relative;
+      top: -12px;
+      left: -12px;
+      box-sizing: border-box;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-color: #89216B;
+      background-image: linear-gradient(147deg, #DA4453 0%, #89216B 100%);
+    }
+    &-action{
+      margin-bottom: 24px;
+    }
+  }
+  &__container{
+    flex-grow: 2;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      width: 15px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 15px;
+      border-radius: 5px;
+      background-color: #555555;
+    }
+  }
+  &__room{
+    padding: 12px;
+    transition: 0.2s ease;
+    border-radius: 5px;
+    background: #333333;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    &:hover{
+      background: #555555;
+      cursor: pointer;
+    }
+    &-title{
+      font-weight: 600;
+    }
+    &_selected{
+      background: #555555;
+    }
+    &-action{
+      width: 100%;
+      position: relative;
+      display: none;
+      &_opened{
+        display: flex;
+      }
+    }
+  }
+  &__button{
+    margin-top: 24px;
+    display: block;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 12px;
+    transition: 0.2s ease;
+    background: #89216B;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    &:hover{
+      background: #912673;
+      cursor: pointer;
+    }
+    &:active{
+      background: #671951;
+    }
+  }
+  &__posts{
+    &-title{
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+  }
+  &__post{
+    width: 100%;
+    border-radius: 10px;
+    background: #333333;
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &-image{
+      width: 100%;
+      padding-bottom: 60%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-color: #F4D03F;
+      background-image: linear-gradient(147deg, #16A085 0%, #F4D03F 100%);
+    }
+    &-text{
+      padding: 24px;
+    }
+    &-title{
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    &-date{
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    &-subtitle{
+    }
+  }
+  &__online{
+    &-title{
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    &-user{
+      margin-bottom: 5px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    &-others{
+      font-weight: 600;
+      margin-top: 15px;
+      color: #bfbfbf;
+    }
+  }
+}
+
 .tutorial {
   display: grid;
   grid-template-columns: 400px 1fr;

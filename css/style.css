@@ -407,6 +407,187 @@ body {
   margin-right: 0;
 }
 
+.lobby {
+  padding: 100px 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  position: relative;
+  grid-template-columns: 250px 1fr auto;
+  box-sizing: border-box;
+  grid-column-gap: 60px;
+  grid-row-gap: 60px;
+  flex-grow: 2;
+}
+@media (max-width: 900px) {
+  .lobby {
+    grid-template-columns: 1fr auto;
+    max-width: 600px;
+  }
+}
+@media (max-width: 630px) {
+  .lobby {
+    grid-template-columns: 1fr;
+  }
+}
+.lobby__rooms {
+  width: 100%;
+  padding: 12px;
+  position: sticky;
+  top: 105px;
+  border-radius: 10px;
+  background: #333333;
+  box-sizing: border-box;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 900px) {
+  .lobby__rooms {
+    grid-area: 1/1/2/3;
+    position: static;
+  }
+}
+@media (max-width: 630px) {
+  .lobby__rooms {
+    grid-area: auto;
+  }
+}
+.lobby__rooms-title {
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+  padding: 24px;
+  width: calc(100% + 24px);
+  position: relative;
+  top: -12px;
+  left: -12px;
+  box-sizing: border-box;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #89216B;
+  background-image: linear-gradient(147deg, #DA4453 0%, #89216B 100%);
+}
+.lobby__rooms-action {
+  margin-bottom: 24px;
+}
+.lobby__container {
+  flex-grow: 2;
+  overflow: auto;
+}
+.lobby__container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.lobby__container::-webkit-scrollbar-track {
+  width: 15px;
+  background-color: transparent;
+}
+.lobby__container::-webkit-scrollbar-thumb {
+  width: 15px;
+  border-radius: 5px;
+  background-color: #555555;
+}
+.lobby__room {
+  padding: 12px;
+  transition: 0.2s ease;
+  border-radius: 5px;
+  background: #333333;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+.lobby__room:hover {
+  background: #555555;
+  cursor: pointer;
+}
+.lobby__room-title {
+  font-weight: 600;
+}
+.lobby__room_selected {
+  background: #555555;
+}
+.lobby__room-action {
+  width: 100%;
+  position: relative;
+  display: none;
+}
+.lobby__room-action_opened {
+  display: flex;
+}
+.lobby__button {
+  margin-top: 24px;
+  display: block;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  outline: none;
+  padding: 12px;
+  transition: 0.2s ease;
+  background: #89216B;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.lobby__button:hover {
+  background: #912673;
+  cursor: pointer;
+}
+.lobby__button:active {
+  background: #671951;
+}
+.lobby__posts-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.lobby__post {
+  width: 100%;
+  border-radius: 10px;
+  background: #333333;
+  margin-bottom: 30px;
+}
+.lobby__post:last-child {
+  margin-bottom: 0;
+}
+.lobby__post-image {
+  width: 100%;
+  padding-bottom: 60%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #F4D03F;
+  background-image: linear-gradient(147deg, #16A085 0%, #F4D03F 100%);
+}
+.lobby__post-text {
+  padding: 24px;
+}
+.lobby__post-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.lobby__post-date {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.lobby__online-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.lobby__online-user {
+  margin-bottom: 5px;
+}
+.lobby__online-user:last-child {
+  margin-bottom: 0;
+}
+.lobby__online-others {
+  font-weight: 600;
+  margin-top: 15px;
+  color: #bfbfbf;
+}
+
 .tutorial {
   display: grid;
   grid-template-columns: 400px 1fr;
