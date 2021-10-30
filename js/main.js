@@ -52,3 +52,25 @@ if (document.querySelectorAll('.fade') !== null) {
     imageObserver.observe(element);
   }
 }
+
+
+const Packs = document.querySelectorAll('.packs__item');
+
+if (Packs !== null){
+  for (const pack of Packs){
+    pack.addEventListener('click', (event) => {
+      if (!event.target.classList.contains('packs__button')) {
+
+        if (event.target.closest('.packs__item').classList.contains('packs__item_selected')) {
+          event.target.closest('.packs__item').classList.remove('packs__item_selected');
+          event.target.closest('.packs__item').querySelector('.packs__item-list').classList.remove('packs__item-list_opened');
+        } else {
+          event.target.closest('.packs__item').classList.add('packs__item_selected');
+          event.target.closest('.packs__item').querySelector('.packs__item-list').classList.add('packs__item-list_opened');
+        }
+      }
+    })
+  }
+}
+
+
