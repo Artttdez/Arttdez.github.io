@@ -73,6 +73,7 @@ if (Packs !== null){
   }
 }
 
+
 const QuestionsAndAnswers = {
   1: ['Перед Вами - просо, мясо, колесо. Что находится в черном ящике?','Ничего \n P.S. Серсо :)'],
   2: ['Как называли бога огня в Древней Греции?','Гефест'],
@@ -98,4 +99,19 @@ function showAnswer(i){
 if (document.querySelector('.start__input') !== null) {
   document.querySelector('.start__input').select();
   document.querySelector('.start__input').focus();
+}
+
+const OrderUp = document.getElementById('orderUp');
+const OrderDown = document.getElementById('orderDown');
+
+if ((OrderUp !== null) || (OrderDown !== null)) {
+  OrderUp.addEventListener('click', () => {
+    OrderUp.style.display = 'none';
+    OrderDown.style.display = 'inline';
+  })
+
+  OrderDown.addEventListener('click', () => {
+    OrderDown.style.display = 'none';
+    OrderUp.style.display = 'inline';
+  })
 }
