@@ -73,4 +73,29 @@ if (Packs !== null){
   }
 }
 
+const QuestionsAndAnswers = {
+  1: ['Перед Вами - просо, мясо, колесо. Что находится в черном ящике?','Ничего \n P.S. Серсо :)'],
+  2: ['Как называли бога огня в Древней Греции?','Гефест'],
+  3: ['Где находится это здание?','Сидней, Австралия'],
+  4: ['Где находится эта картина?','Лувр, Франция'],
+  5: ['"Если путешествия во времени возможны, то где же туристы из будущего?"\nЧья эта цитата?','Стивен Хокинг'],
+  6: ['Назовите всех президентов США, высеченных на горе Рашмор','Джордж Вашингтон, Томас Джефферсон, Теодор Рузвельт и Авраам Линкольн'],
+  7: ['Сколько ног у речного рака?','Восемь'],
+}
 
+function showAnswer(i){
+  let element = document.querySelector(`.pattern__question_type${i}`);
+  if (!element.classList.contains('pattern__question_show-answer')){
+    element.classList.add('pattern__question_show-answer');
+    setTimeout(() => {element.querySelector('.pattern__question-context').innerText = QuestionsAndAnswers[i][1]}, 500);
+  }
+  else{
+    element.querySelector('.pattern__question-context').innerText = QuestionsAndAnswers[i][0];
+    element.classList.remove('pattern__question_show-answer');
+  }
+}
+
+if (document.querySelector('.start__input') !== null) {
+  document.querySelector('.start__input').select();
+  document.querySelector('.start__input').focus();
+}
