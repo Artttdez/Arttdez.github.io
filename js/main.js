@@ -131,3 +131,19 @@ function selectRoom(number){
   document.querySelectorAll('.lobby__room')[RoomSelected].classList.add('lobby__room_selected');
   document.querySelectorAll('.lobby__room-action')[RoomSelected].classList.add('lobby__room-action_opened');
 }
+
+const Popups = document.querySelectorAll('.popup');
+
+function changePopupState(number){
+  Popups[number].classList.contains('popup_opened') ? Popups[number].classList.remove('popup_opened') : Popups[number].classList.add('popup_opened');
+}
+
+if (Popups !== null) {
+  for (let i = 0; i < Popups.length; i++)
+  {
+    Popups[i].addEventListener('click', (event) => {
+      if (!event.target.closest('.popup__content')) {
+        changePopupState(i);
+      }
+    })}
+}

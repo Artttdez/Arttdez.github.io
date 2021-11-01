@@ -25,6 +25,65 @@
   <script src="https://kit.fontawesome.com/6456946f0c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="popup">
+  <div class="popup__content">
+    <i class="fas fa-times popup__close" onclick="changePopupState(0)"></i>
+    <div class="popup__title">
+      Ваша Комната
+    </div>
+    <div class="popup__table">
+      <div class="popup__table-title">Название комнаты</div>
+      <input type="text" class="popup__input" placeholder="Название">
+      <div class="popup__table-title">Пароль</div>
+      <input type="password" class="popup__input" placeholder="Пароль">
+      <div class="popup__table-title">Количество игроков (с&nbsp;ведущим)</div>
+      <input type="number" max="10" min="0" class="popup__input" placeholder="5">
+    </div>
+    <div class="popup__options">
+      <input class="popup__radio" type="radio" name="packType" id="packType1" checked>
+      <label class="popup__option" for="packType1" onclick="openPacksType('ready')">
+        Выбрать готовый пакет
+      </label>
+      <input class="popup__radio" type="radio" name="packType" id="packType2">
+      <label class="popup__option" for="packType2" onclick="openPacksType('custom')">Сыграть свой пакет</label>
+    </div>
+    <div class="popup__ready">
+      <div class="popup__table">
+        <div class="popup__table-title">Пакет вопросов</div>
+        <div class="popup__action action">
+          <input type="text" class="popup__input popup__input_search action__input" placeholder="Название пакета">
+          <button class="action__button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <div class="popup__list">
+        <input class="popup__radio" type="radio" name="packChoose" id="packChoose1">
+        <label class="popup__list-item" for="packChoose1">
+          Пак фильмов
+        </label>
+        <input class="popup__radio" type="radio" name="packChoose" id="packChoose2">
+        <label class="popup__list-item" for="packChoose2">
+          Пак книг
+        </label>
+        <input class="popup__radio" type="radio" name="packChoose" id="packChoose3">
+        <label class="popup__list-item" for="packChoose3">
+          Пак напитков
+        </label>
+        <input class="popup__radio" type="radio" name="packChoose" id="packChoose4">
+        <label class="popup__list-item" for="packChoose4">
+          Пак еды разных стран
+        </label>
+        <input class="popup__radio" type="radio" name="packChoose" id="packChoose5">
+        <label class="popup__list-item" for="packChoose5">
+          Пак напитков
+        </label>
+      </div>
+    </div>
+    <div class="popup__drop" style="display: none">
+      <div class="popup__drop-content"><i class="fas fa-cloud-upload-alt popup__drop-icon"></i><br>Перетащите сюда пакет вопросов или кликните для выбора файла</div>
+    </div>
+    <div class="popup__button">Создать</div>
+  </div>
+</div>
 <div class="header">
   <div class="header__content">
     <div class="header__row">
@@ -43,11 +102,11 @@
     </div>
     <div class="header__row">
       <div class="user user_type1">
-          <i class="fas fa-dragon user__icon">
-          </i>
-          <div class="user__nickname">
-            Дракох
-          </div>
+        <i class="fas fa-dragon user__icon">
+        </i>
+        <div class="user__nickname">
+          Дракох
+        </div>
       </div>
     </div>
   </div>
@@ -56,8 +115,8 @@
   <div class="lobby__rooms">
     <div class="lobby__rooms-title">Комнаты</div>
     <div class="lobby__rooms-action action">
-    <input type="text" class="action__input" placeholder="Название">
-    <button class="action__button"><i class="fas fa-search"></i></button>
+      <input type="text" class="action__input" placeholder="Название">
+      <button class="action__button"><i class="fas fa-search"></i></button>
     </div>
     <div class="lobby__container">
       <div class="lobby__room" onclick="selectRoom(0)">
@@ -110,7 +169,7 @@
         </div>
         <div class="lobby__room-action action fade">
           <input type="password" class="action__input" placeholder="Пароль">
-            <a href="game.html">
+          <a href="game.html">
             <button class="action__button"><i class="fas fa-arrow-right"></i></button>
           </a>
         </div>
@@ -306,7 +365,6 @@
     <div class="lobby__online-others">
       и еще <span style="color: white">146</span> игроков
     </div>
-  </div>
   </div>
 </div>
 <div class="footer">
