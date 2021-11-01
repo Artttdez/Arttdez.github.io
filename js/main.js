@@ -115,3 +115,19 @@ if ((OrderUp !== null) || (OrderDown !== null)) {
     OrderUp.style.display = 'inline';
   })
 }
+
+const Menu = document.querySelector('.header__links');
+
+function changeMenuState(){
+  Menu.classList.contains('header__links_opened') ? Menu.classList.remove('header__links_opened') : Menu.classList.add('header__links_opened');
+}
+
+let RoomSelected = 0;
+
+function selectRoom(number){
+  document.querySelectorAll('.lobby__room')[RoomSelected].classList.remove('lobby__room_selected');
+  document.querySelectorAll('.lobby__room-action')[RoomSelected].classList.remove('lobby__room-action_opened');
+  RoomSelected = number;
+  document.querySelectorAll('.lobby__room')[RoomSelected].classList.add('lobby__room_selected');
+  document.querySelectorAll('.lobby__room-action')[RoomSelected].classList.add('lobby__room-action_opened');
+}
