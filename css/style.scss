@@ -986,3 +986,224 @@ body{
     }
   }
 }
+
+.filters{
+  margin-bottom: 30px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+  &__select{
+    display: inline-block;
+    border-radius: 5px;
+    background: #333333;
+    padding: 12px 36px 12px 12px;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.2s ease;
+    outline: none;
+    margin: 7px;
+    background-image: linear-gradient(
+                    45deg, transparent 50%, #ffffff 50%), linear-gradient(
+                    135deg, #ffffff 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em  + 1px), calc(100% - 15px) calc(1em + 1px), 100% 0;
+    background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+    background-repeat: no-repeat;
+    &:hover{
+      background: #555555;
+      background-image: linear-gradient(
+                      45deg, transparent 50%, #ffffff 50%), linear-gradient(
+                      135deg, #ffffff 50%, transparent 50%);
+      background-position: calc(100% - 20px) calc(1em  + 1px), calc(100% - 15px) calc(1em + 1px), 100% 0;
+      background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+  }
+  &__option{
+
+  }
+  &__order-type{
+    background: #333333;
+    transition: 0.2s ease;
+    padding: 12px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 7px 0 7px 7px;
+    @media (max-width: 800px) {
+      margin: 7px;
+    }
+    &:hover {
+      background: #555555;
+      cursor: pointer;
+    }
+  }
+  &__action{
+    flex-grow: 2;
+    max-width: 300px;
+    margin: 7px auto 7px 0;
+    @media (max-width: 800px) {
+      width: 100%;
+      max-width: none;
+      margin: 0 0 7px 0;
+    }
+  }
+}
+
+.packs{
+  display: grid;
+  grid-row-gap: 5px;
+  width: 100%;
+  &__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-column-gap: 60px;
+  }
+  &__item{
+    padding: 12px;
+    background: #333333;
+    border-radius: 5px;
+    transition: 0.2s ease;
+    &:hover{
+      cursor: pointer;
+      background: #555555;
+    }
+    &_selected{
+      background: #555555;
+    }
+    &-main{
+      display: flex;
+      align-items: center;
+    }
+    &-title{
+      flex-grow: 2;
+      font-weight: 600;
+      margin-right: 5px;
+    }
+    &-star{
+      margin-bottom: 2px;
+      @media (max-width: 600px) {
+        display: none !important;
+      }
+    }
+    &-date{
+      margin-left: 15px;
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+    &-list{
+      display: none;
+      &_opened{
+        display: block;
+      }
+      & li{
+        line-height: 1.5;
+      }
+    }
+    &-round{
+      & li{
+        list-style-type: none;
+        &:before{
+          content: '●';
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  &__button {
+    margin-left: 15px;
+    display: block;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 12px;
+    transition: 0.2s ease;
+    background: #89216B;
+    text-align: center;
+    box-sizing: border-box;
+
+    &:hover {
+      background: #912673;
+      cursor: pointer;
+    }
+
+    &:active {
+      background: #671951;
+    }
+  }
+}
+
+.feedback{
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  @media (max-width: 310px) {
+    flex-direction: column;
+  }
+  &__banner{
+    max-width: 300px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    position: relative;
+    box-sizing: border-box;
+    &:last-child{
+      margin-right: 0;
+    }
+    @media (max-width: 310px) {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+    &_type1{
+      background-color: #FF3CAC;
+      background-image: linear-gradient(147deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    }
+    &_type2{
+      background-color: #08AEEA;
+      background-image: linear-gradient(147deg, #08AEEA 0%, #2AF598 100%);
+    }
+    &-description{
+      margin-bottom: 60px;
+    }
+    &-button{
+      background: white;
+      color: #555555;
+      position: absolute;
+      bottom: 12px;
+      width: calc(100% - 24px);
+      &:hover{
+        background: white;
+      }
+    }
+  }
+}
+
+#headerLogo{
+  @media (max-width: 1100px) {
+    display: none;
+  }
+}
+
+#headerMenu{
+  display: none;
+  @media (max-width: 1100px) {
+    display: block;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+
