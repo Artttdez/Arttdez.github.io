@@ -37,43 +37,6 @@ if ((VolumeUp !== null) || (VolumeMute !== null)) {
   })
 }
 
-
-if (document.querySelectorAll('.fade') !== null) {
-  const imageObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-      setTimeout(() => {
-        entry.isIntersecting
-            ? entry.target.classList.add('fade_in')
-            : entry.target.classList.remove('fade_in')
-      }, 100)
-    })
-  }, {})
-  for (const element of document.querySelectorAll('.fade')) {
-    imageObserver.observe(element);
-  }
-}
-
-
-const Packs = document.querySelectorAll('.packs__item');
-
-if (Packs !== null){
-  for (const pack of Packs){
-    pack.addEventListener('click', (event) => {
-      if (!event.target.classList.contains('packs__button')) {
-
-        if (event.target.closest('.packs__item').classList.contains('packs__item_selected')) {
-          event.target.closest('.packs__item').classList.remove('packs__item_selected');
-          event.target.closest('.packs__item').querySelector('.packs__item-list').classList.remove('packs__item-list_opened');
-        } else {
-          event.target.closest('.packs__item').classList.add('packs__item_selected');
-          event.target.closest('.packs__item').querySelector('.packs__item-list').classList.add('packs__item-list_opened');
-        }
-      }
-    })
-  }
-}
-
-
 const QuestionsAndAnswers = {
   1: ['Перед Вами - просо, мясо, колесо. Что находится в черном ящике?','Ничего \n P.S. Серсо :)'],
   2: ['Как называли бога огня в Древней Греции?','Гефест'],
@@ -99,6 +62,48 @@ function showAnswer(i){
 if (document.querySelector('.start__input') !== null) {
   document.querySelector('.start__input').select();
   document.querySelector('.start__input').focus();
+}
+
+if (document.querySelectorAll('.fade') !== null) {
+  const imageObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+      setTimeout(() => {
+        entry.isIntersecting
+            ? entry.target.classList.add('fade_in')
+            : entry.target.classList.remove('fade_in')
+      }, 100)
+    })
+  }, {})
+  for (const element of document.querySelectorAll('.fade')) {
+    imageObserver.observe(element);
+  }
+}
+
+function openPacksType(type){
+  if (type === 'ready') {
+    document.querySelector('.popup__ready').style.display = 'block';
+    document.querySelector('.popup__drop').style.display = 'none';
+  }
+  else{
+    document.querySelector('.popup__ready').style.display = 'none';
+    document.querySelector('.popup__drop').style.display = 'flex';
+  }
+}
+
+const Popups = document.querySelectorAll('.popup');
+
+function changePopupState(number){
+  Popups[number].classList.contains('popup_opened') ? Popups[number].classList.remove('popup_opened') : Popups[number].classList.add('popup_opened');
+}
+
+if (Popups !== null) {
+  for (let i = 0; i < Popups.length; i++)
+  {
+    Popups[i].addEventListener('click', (event) => {
+      if (!event.target.closest('.popup__content')) {
+        changePopupState(i);
+      }
+    })}
 }
 
 const OrderUp = document.getElementById('orderUp');
@@ -132,18 +137,21 @@ function selectRoom(number){
   document.querySelectorAll('.lobby__room-action')[RoomSelected].classList.add('lobby__room-action_opened');
 }
 
-const Popups = document.querySelectorAll('.popup');
+const Packs = document.querySelectorAll('.packs__item');
 
-function changePopupState(number){
-  Popups[number].classList.contains('popup_opened') ? Popups[number].classList.remove('popup_opened') : Popups[number].classList.add('popup_opened');
-}
+if (Packs !== null){
+  for (const pack of Packs){
+    pack.addEventListener('click', (event) => {
+      if (!event.target.classList.contains('packs__button')) {
 
-if (Popups !== null) {
-  for (let i = 0; i < Popups.length; i++)
-  {
-    Popups[i].addEventListener('click', (event) => {
-      if (!event.target.closest('.popup__content')) {
-        changePopupState(i);
+        if (event.target.closest('.packs__item').classList.contains('packs__item_selected')) {
+          event.target.closest('.packs__item').classList.remove('packs__item_selected');
+          event.target.closest('.packs__item').querySelector('.packs__item-list').classList.remove('packs__item-list_opened');
+        } else {
+          event.target.closest('.packs__item').classList.add('packs__item_selected');
+          event.target.closest('.packs__item').querySelector('.packs__item-list').classList.add('packs__item-list_opened');
+        }
       }
-    })}
+    })
+  }
 }
