@@ -176,3 +176,23 @@ getUsernamePromise.then((value) => {
     document.getElementById('username').innerText = value
 });
 
+const Links = document.querySelector('.header__links').children;
+
+if (Links !== null){
+  const page = window.location.pathname.split("/").pop();
+  switch (page){
+    case 'lobby.html':
+      Links[0].classList.add('link_selected');
+      break;
+    case 'packs.html':
+      Links[1].classList.add('link_selected');
+      break;
+    case 'tutorial.html':
+      Links[2].classList.add('link_selected');
+      break;
+    case 'about_project.html':
+      Links[3].classList.add('link_selected');
+      break;
+  }
+}
+
