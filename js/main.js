@@ -155,3 +155,24 @@ if (Packs !== null){
     })
   }
 }
+
+function setUsername(){
+  const username = document.querySelector('.start__input').value;
+  localStorage.setItem('username', username);
+}
+
+function resetUsername(){
+  localStorage.removeItem('username');
+}
+
+const getUsernamePromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(localStorage.getItem('username'));
+  }, 800);
+});
+
+getUsernamePromise.then((value) => {
+  if (document.getElementById('username') !== null)
+    document.getElementById('username').innerText = value
+});
+
